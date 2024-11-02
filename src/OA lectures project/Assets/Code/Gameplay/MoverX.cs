@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code
+namespace Code.Gameplay
 {
     internal class MoverX : MonoBehaviour
     {
@@ -8,11 +8,13 @@ namespace Code
         private Rigidbody2D _rigidbody;
         
         [SerializeField] 
-        private float speed;
+        private float _speed;
+
+        public float Speed => _rigidbody.velocity.x;
 
         public void Move(float input)
         {
-            _rigidbody.velocity = new Vector2(input * speed, _rigidbody.velocity.y);
+            _rigidbody.velocity = new Vector2(input * _speed, _rigidbody.velocity.y);
         }
     }
 }
