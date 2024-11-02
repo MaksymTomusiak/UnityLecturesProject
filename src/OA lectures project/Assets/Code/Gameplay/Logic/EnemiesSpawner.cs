@@ -1,8 +1,6 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
-namespace Code.Gameplay
+namespace Code.Gameplay.Logic
 {
     public class EnemiesSpawner : MonoBehaviour
     {
