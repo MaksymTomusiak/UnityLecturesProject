@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Gameplay.Logic
 {
@@ -9,7 +8,7 @@ namespace Code.Gameplay.Logic
         {
             if (other.gameObject.TryGetComponent(out ICollectable collectable))
             {
-                collectable.Collect();
+                collectable.Collect(this);
             }
         }
     }
