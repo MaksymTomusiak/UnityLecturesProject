@@ -17,7 +17,7 @@ namespace Code.Gameplay
                 return;
             }
 
-            var x = sign * Math.Abs(transform.localScale.x);
+            float x = sign * Math.Abs(transform.localScale.x);
             transform.localScale = transform.localScale.SetX(x);
         }
     }
