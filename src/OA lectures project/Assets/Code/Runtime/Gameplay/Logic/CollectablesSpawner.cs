@@ -1,9 +1,8 @@
 ﻿using System.Collections;
-using Code.Extensions;
+using Code.Runtime.Extensions;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Code.Gameplay.Logic
+namespace Code.Runtime.Gameplay.Logic
 {
     public class CollectablesSpawner : MonoBehaviour
     {
@@ -14,7 +13,8 @@ namespace Code.Gameplay.Logic
         private GameObject _collectable;
 
         [SerializeField] 
-        private int _randomDeltaX = 2;
+        private float _randomDeltaX = 2;
+        public float RandomDeltaX => _randomDeltaX;
 
         private IEnumerator Start()
         {
