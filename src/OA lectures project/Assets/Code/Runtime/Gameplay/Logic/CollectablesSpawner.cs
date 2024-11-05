@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using Code.Runtime.Extensions;
+using Code.Runtime.Infrastructure.Services;
 using UnityEngine;
+using Zenject;
 
 namespace Code.Runtime.Gameplay.Logic
 {
@@ -14,7 +16,13 @@ namespace Code.Runtime.Gameplay.Logic
 
         [SerializeField] 
         private float _randomDeltaX = 2;
+
+        private IRandomService _randomService;
         public float RandomDeltaX => _randomDeltaX;
+
+        [Inject]
+        private void Construct(IRandomService randomService)
+            => _randomService = randomService;
 
         private IEnumerator Start()
         {
@@ -31,6 +39,6 @@ namespace Code.Runtime.Gameplay.Logic
             Instantiate(_collectable, transform.position.SetX(GetRandomX()), Quaternion.identity, gameObject.transform);
         }
 
-        private float GetRandomX() => Random.Range(-_randomDeltaX, _randomDeltaX);
+        private float GetRandomX() => _randomService.Range(-_randomDeltaX, _randomDeltaX);
     }
 }
