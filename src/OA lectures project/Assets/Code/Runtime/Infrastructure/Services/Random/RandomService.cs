@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-
-namespace Code.Runtime.Infrastructure.Services
+﻿namespace Code.Runtime.Infrastructure.Services.Random
 {
     public class RandomService : IRandomService
     {
-        public float Range(float minInclusive, float maxInclusive) => Random.Range(minInclusive, maxInclusive);
+        public float Range(float minInclusive, float maxInclusive) => UnityEngine.Random.Range(minInclusive, maxInclusive);
     }
 }
